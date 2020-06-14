@@ -17,7 +17,7 @@ from yolov3.models import (
 )
 
 from yolov3.utils import freeze_all
-import yolov3_tf2.dataset as dataset
+import yolov3.dataset as dataset
 
 flags.DEFINE_string('dataset', '', 'path to dataset')
 flags.DEFINE_string('val_dataset', '', 'path to validation dataset')
