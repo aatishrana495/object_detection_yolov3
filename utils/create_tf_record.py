@@ -45,12 +45,12 @@ def create_tfdatapoint(file_loc, file, labels):
 
 def create_record(file_loc, labels, outputPath, outputPath_val):
     # creates a classes.pbtx with the label info
-    f = open('../data/classes.names', "w")
-    # loop over the classes
-    for k in labels:
-        # construct the class information and write to file
-        item = (str(labels[k]) + "\n")
-        f.write(item)
+    # f = open('../data/classes.names', "w")
+    # # loop over the classes
+    # for k in labels:
+    #     # construct the class information and write to file
+    #     item = (str(labels[k]) + "\n")
+    #     f.write(item)
 
     file_list = []
     print("[INFO] creating list of file name...")
@@ -95,3 +95,13 @@ def create_record(file_loc, labels, outputPath, outputPath_val):
     writer.close()
     writer_val.close()
 
+def main():
+    file_loc = '../tiburon_data/tiburon_data'
+    labels = {1: 'red bin', 2: 'blue bin', 3: 'yellow flare', 4: 'mat', 5: 'red flare', 6: 'gate green',
+              7: 'gate black', 8: 'gate red'}
+    outputPath = 'dataset/train2.record'
+    outputPath_val = 'dataset/val2.record'
+    create_record(file_loc, labels, outputPath, outputPath_val)
+
+if __name__ == "__main__":
+    main()
